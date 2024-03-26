@@ -1,8 +1,8 @@
 ---
 title: Arc2Face
-emoji: 🌖
+emoji: 🔥
 colorFrom: yellow
-colorTo: indigo
+colorTo: purple
 sdk: gradio
 sdk_version: 4.23.0
 app_file: app.py
