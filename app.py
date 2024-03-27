@@ -104,7 +104,7 @@ def generate_image(image_path, num_steps, guidance_scale, seed, num_images, prog
     faces = app.get(img)
     
     if len(faces) == 0:
-        raise gr.Error(f"Face detection failed! Please try with another image")
+        raise gr.Error(f"Face detection failed! Please try with another image.")
     
     faces = sorted(faces, key=lambda x:(x['bbox'][2]-x['bbox'][0])*(x['bbox'][3]-x['bbox'][1]))[-1]  # select largest face (if more than one detected)
     id_emb = torch.tensor(faces['embedding'], dtype=dtype)[None].to(device)
