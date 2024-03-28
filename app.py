@@ -38,10 +38,7 @@ hf_hub_download(repo_id="FoivosPar/Arc2Face", filename="encoder/pytorch_model.bi
 hf_hub_download(repo_id="FoivosPar/Arc2Face", filename="arcface.onnx", local_dir="./models/antelopev2")
 
 # Load face detection and recognition package
-if device=="cuda":
-    app = FaceAnalysis(name='antelopev2', root='./', providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
-else:
-    app = FaceAnalysis(name='antelopev2', root='./', providers=['CPUExecutionProvider'])
+app = FaceAnalysis(name='antelopev2', root='./', providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(640, 640))
 
 # Load pipeline
