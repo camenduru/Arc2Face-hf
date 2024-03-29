@@ -16,7 +16,6 @@ import numpy as np
 import random
 
 import gradio as gr
-import spaces
 
 # global variable
 MAX_SEED = np.iinfo(np.int32).max
@@ -90,7 +89,6 @@ def get_example():
 def run_example(img_file):
     return generate_image(img_file, 25, 3, 23, 2)
 
-@spaces.GPU
 def generate_image(image_path, num_steps, guidance_scale, seed, num_images, progress=gr.Progress(track_tqdm=True)):
 
     if image_path is None:
@@ -226,4 +224,4 @@ with gr.Blocks(css=css) as demo:
     
     gr.Markdown(Footer)
 
-demo.launch()
+demo.launch(share=True)
